@@ -1,0 +1,32 @@
+@import "../../styles/colors";
+
+.actionsOnAds {
+  margin-top: 20px;
+  display: flex;
+  .actionsOnAds--Right {
+    display: flex;
+    margin-left: auto;
+    .commonIconStyles {
+      fill: $blue;
+    }
+    .commonStyles {
+      display: flex;
+      font-size: 13px;
+      color: $black;
+      height: 36px;
+      width: 76px;
+      border: 1px solid $borderColor;
+      padding: 10px;
+      background-color: $white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .actionsOnAds--Sort {
+      @extend .commonStyles;
+      margin-right: 15px;
+    }
+    .actionsOnAds--Filter {
+      @extend .commonStyles;
+    }
+  }
+}

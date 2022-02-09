@@ -1,0 +1,93 @@
+@import "../../styles/colors";
+
+.adCard {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: 390px;
+  cursor: pointer;
+  .adCard--CardHeader {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 10px;
+    .adCard--CardHeader--Title {
+      color: $black;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .adCard--IconButton {
+      margin-left: auto;
+    }
+  }
+  .adCard--Link {
+    text-decoration: none;
+    color: $black;
+  }
+
+  .adCard--CardContent--DescTitle {
+    color: $black;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .adCard--CardContent--Description {
+    color: $gray;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .adcard--CardActions--Div {
+    display: flex;
+    width: 100%;
+  }
+
+  .adCard--CardActions {
+    margin-top: 15px;
+  }
+
+  .repeatStyles {
+    margin-left: auto;
+    float: right;
+    width: 70px;
+    height: 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
+  .adcard--CardActions--Div--Live {
+    @extend .repeatStyles;
+    background-color: $lightGreen;
+    color: $darkGreen;
+  }
+
+  .adcard--CardActions--Div--Paused {
+    @extend .repeatStyles;
+    background-color: $lightRed;
+    color: $red;
+  }
+
+  .adcard--CardActions--Div--Draft {
+    @extend .repeatStyles;
+    background-color: $lightGray;
+    color: $gray;
+  }
+
+  // .adcard--CardActions--Dot {
+  //   font-size: 50px;
+  // }
+
+  .adCard--Icon {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .addCard--FB {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+.adDetails {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  .adDetails--Header {
+    display: flex;
+  }
+  .adDetails--IconButton {
+    margin-left: auto;
+  }
+}
