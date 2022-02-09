@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Dashboard.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { adActions } from "../../redux/_actions";
+import { useSelector } from "react-redux";
 import { AdCard, ActionsOnAds, CreateAdCard } from "../../component";
 
 const Dashboard = (props) => {
   const storeAds = useSelector((state) => state.ads.ads);
   const [ads] = useState(storeAds);
-  const [updatedAds, setUpdatedAds] = useState(null);
-  const [getAddedUpdate, setGetAddedUpdate] = useState(false);
+  const [, setUpdatedAds] = useState(null);
+  const [, setGetAddedUpdate] = useState(false);
 
   const getActionResult = (input) => {
     console.log(input);

@@ -12,7 +12,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "live",
       imageUrl: photo1,
-      adType: "video",
+      adType: {
+        type: "video",
+        url: "https://youtu.be/EKsoj96HQGY?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK",
+      },
     },
     {
       id: 1,
@@ -21,7 +24,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "live",
       imageUrl: photo2,
-      adType: "image",
+      adType: {
+        type: "image",
+        url: photo2,
+      },
     },
     {
       id: 2,
@@ -30,7 +36,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "live",
       imageUrl: photo3,
-      adType: "video",
+      adType: {
+        type: "video",
+        url: "https://youtu.be/EKsoj96HQGY?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK",
+      },
     },
     {
       id: 3,
@@ -39,7 +48,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "live",
       imageUrl: photo1,
-      adType: "video",
+      adType: {
+        type: "video",
+        url: "https://www.youtube.com/watch?v=EKsoj96HQGY&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=10",
+      },
     },
     {
       id: 4,
@@ -48,7 +60,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "paused",
       imageUrl: photo2,
-      adType: "image",
+      adType: {
+        type: "image",
+        url: photo2,
+      },
     },
     {
       id: 5,
@@ -57,7 +72,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "live",
       imageUrl: photo3,
-      adType: "video",
+      adType: {
+        type: "video",
+        url: "https://youtu.be/EKsoj96HQGY?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK",
+      },
     },
     {
       id: 6,
@@ -66,7 +84,10 @@ const intialState = {
       description: "Maximum storage capacity with our counter depth fidge",
       status: "draft",
       imageUrl: null,
-      adType: "image",
+      adType: {
+        type: "image",
+        url: null,
+      },
     },
   ],
 };

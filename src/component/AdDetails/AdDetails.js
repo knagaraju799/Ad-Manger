@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./AdDetails.scss";
+import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -53,12 +54,22 @@ function AdDetails() {
           </IconButton>
         </div>
 
-        <CardMedia
-          component="img"
-          height="155"
-          image={filterAd.imageUrl !== null ? filterAd.imageUrl : noImage}
-          alt={filterAd.title}
-        />
+        {filterAd.adType.type === "video" ? (
+          <div>
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+              height="200"
+            />
+          </div>
+        ) : (
+          <CardMedia
+            component="img"
+            height="155"
+            image={filterAd.imageUrl !== null ? filterAd.imageUrl : noImage}
+            alt={filterAd.title}
+          />
+        )}
+
         <CardContent>
           <div className="adCard--CardContent--DescTitle">
             {filterAd.descTitle}

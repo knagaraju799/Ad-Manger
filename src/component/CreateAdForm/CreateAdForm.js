@@ -47,7 +47,7 @@ const CreateAdForm = (props) => {
           descTitle: descTitle,
           description: descript,
           status: adData.state,
-          imageUrl: imageAddr,
+          imageUrl: imageAddr.length === 0 ? null : imageAddr.length,
           adType: adData.adType,
         };
         dispatch(adActions.adAddAction(obj));
@@ -111,7 +111,6 @@ const CreateAdForm = (props) => {
             value={title}
             onChange={getTheTitle}
           />
-
           <TextField
             autoFocus
             margin="dense"
