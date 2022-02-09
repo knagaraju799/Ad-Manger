@@ -102,7 +102,7 @@ function AdCard(props) {
             ))}
           </Menu>
         </div>
-        <Link to={`/ads/${props.item.id}`} className="adCard--Link">
+        <Link to={`/${props.item.id}`} className="adCard--Link">
           <CardMedia
             component="img"
             height="155"

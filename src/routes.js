@@ -7,8 +7,8 @@ export default function CustomRoutes() {
   return (
     <Router>
       <Routes>
-        <Route default path="/ads" exact element={<Dashboard />} />
-        <Route path="ads/:adId" exact element={<AdDetails />} />
+        <Route default path="/" exact element={<Dashboard />} />
+        <Route path="/:adId" exact element={<AdDetails />} />
       </Routes>
     </Router>
   );
