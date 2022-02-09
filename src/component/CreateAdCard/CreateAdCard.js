@@ -38,7 +38,12 @@ const CreateAdCard = (props) => {
         >
           + Create ad
         </Button>
-        <CreateAdForm open={open} setOpen={setOpen} adFormObj={adFormObj} />
+        <CreateAdForm
+          open={open}
+          setOpen={setOpen}
+          adFormObj={adFormObj}
+          setGetAddedUpdate={props.setGetAddedUpdate}
+        />
       </div>
     </Card>
   );

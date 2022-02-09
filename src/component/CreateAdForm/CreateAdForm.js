@@ -13,29 +13,53 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 
 const CreateAdForm = (props) => {
   const { formData, adData } = props.adFormObj;
+  const dispatch = useDispatch();
   const [title, setTitle] = useState(adData.title);
   const [descTitle, setDescTitle] = useState(adData.descTitle);
   const [imageAddr, setImageAddr] = useState(adData.imageUrl);
   const [descript, setDescript] = useState(adData.description);
-  const dispatch = useDispatch();
 
   const handleClose = () => {
     props.setOpen(false);
   };
 
+  const formValidation = () => {
+    if (title.length <= 0) {
+      alert("Enter the title");
+      return false;
+    } else if (descTitle.length <= 0) {
+      alert("Enter description title");
+      return false;
+    } else if (descript.length <= 0) {
+      alert("Enter the description");
+      return false;
+    }
+
+    return true;
+  };
   const handleCreate = () => {
     console.log(formData.buttonTitle);
     if (formData.buttonTitle === "Create") {
-      const obj = {
-        id: adData.id,
-        title: title,
-        descTitle: descTitle,
-        description: descript,
-        status: adData.state,
-        imageUrl: imageAddr,
-        adType: adData.adType,
-      };
-      dispatch(adActions.adAddAction(obj));
+      if (formValidation()) {
+        const obj = {
+          id: adData.id,
+          title: title,
+          descTitle: descTitle,
+          description: descript,
+          status: adData.state,
+          imageUrl: imageAddr,
+          adType: adData.adType,
+        };
+        dispatch(adActions.adAddAction(obj));
+        props.setGetAddedUpdate(true);
+        setTitle("");
+        setDescTitle("");
+        setImageAddr("");
+        setDescript("");
+        props.setOpen(false);
+      } else {
+        props.setOpen(true);
+      }
     } else {
       const obj = {
         id: adData.id,
@@ -45,9 +69,8 @@ const CreateAdForm = (props) => {
         imageUrl: imageAddr,
       };
       dispatch(adActions.adUpdateAction(obj));
+      props.setOpen(false);
     }
-
-    props.setOpen(false);
   };
 
   const getTheTitle = (e) => {
@@ -88,6 +111,7 @@ const CreateAdForm = (props) => {
             value={title}
             onChange={getTheTitle}
           />
+
           <TextField
             autoFocus
             margin="dense"
@@ -100,6 +124,7 @@ const CreateAdForm = (props) => {
             value={imageAddr}
             onChange={getTheimageUrl}
           />
+
           <TextField
             autoFocus
             margin="dense"
@@ -113,6 +138,7 @@ const CreateAdForm = (props) => {
             value={descTitle}
             onChange={getTheDescTitle}
           />
+
           <TextareaAutosize
             aria-label="minimum height"
             minRows={3}

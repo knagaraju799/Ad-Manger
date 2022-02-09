@@ -6,12 +6,9 @@ import { AdCard, ActionsOnAds, CreateAdCard } from "../../component";
 
 const Dashboard = (props) => {
   const storeAds = useSelector((state) => state.ads.ads);
-  const [ads, setAds] = useState(storeAds);
-  const dispatch = useDispatch();
+  const [ads] = useState(storeAds);
   const [updatedAds, setUpdatedAds] = useState(null);
-
-  // console.log(ads);
-  useEffect(() => {}, [ads]);
+  const [getAddedUpdate, setGetAddedUpdate] = useState(false);
 
   const getActionResult = (input) => {
     console.log(input);
@@ -24,7 +21,7 @@ const Dashboard = (props) => {
       <div className="dashboard--Body">
         <ActionsOnAds getActionResult={getActionResult} />
         <div className="dashboard--Ads">
-          <CreateAdCard />
+          <CreateAdCard setGetAddedUpdate={setGetAddedUpdate} />
           {ads.map((item) => (
             <AdCard item={item} key={item.id} setUpdatedAds={setUpdatedAds} />
           ))}
